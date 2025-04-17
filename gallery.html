@@ -4,8 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery - Bhitbherwa</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
+  <meta name="description" content="Browse photos from around Bhitbherwa Village."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
   <style>
     .gallery-container {
       display: grid;
@@ -13,23 +19,26 @@
       gap: 15px;
       padding: 20px;
     }
-
     .gallery-container img {
       width: 100%;
       height: auto;
       border-radius: 10px;
       transition: transform 0.2s ease;
     }
-
     .gallery-container img:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    #language-select {
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Bhitbherwa Gallery</h1>
+    <h1 id="main-header">Gallery - Bhitbherwa</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -37,23 +46,73 @@
       <a href="announcements.html">Announcements</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <div style="text-align: right; padding: 10px;">
+      <select id="language-select" onchange="switchLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+    </div>
   </header>
 
   <main>
     <h2 style="text-align:center;">Our Village in Pictures</h2>
     <div class="gallery-container">
-      <a href="images/village1.jpg" data-lightbox="village" data-title="Village View 1"><img src="images/village1.jpg" alt="Village View 1" /></a>
-      <a href="images/village2.jpg" data-lightbox="village" data-title="Village View 2"><img src="images/village2.jpg" alt="Village View 2" /></a>
-      <a href="images/festival.jpg" data-lightbox="village" data-title="Festival Celebration"><img src="images/festival.jpg" alt="Festival" /></a>
-      <a href="images/school.jpg" data-lightbox="village" data-title="Village School"><img src="images/school.jpg" alt="School" /></a>
-      <!-- Add more images as needed -->
+      <a href="images/village1.jpg" data-lightbox="village" data-title="Village View 1">
+        <img src="images/village1.jpg" alt="Village View 1"/>
+      </a>
+      <a href="images/village2.jpg" data-lightbox="village" data-title="Village View 2">
+        <img src="images/village2.jpg" alt="Village View 2"/>
+      </a>
+      <a href="images/festival.jpg" data-lightbox="village" data-title="Festival Celebration">
+        <img src="images/festival.jpg" alt="Festival Celebration"/>
+      </a>
+      <a href="images/school.jpg" data-lightbox="village" data-title="Village School">
+        <img src="images/school.jpg" alt="Village School"/>
+      </a>
+      <!-- add more images as needed -->
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Bhitbherwa Village Website. All rights reserved.</p>
+    <p>&copy; 2025 Bhitbherwa Village. All rights reserved.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+  <script>
+    const translations = {
+      en: {
+        home: "Home",
+        about: "About",
+        gallery: "Gallery",
+        announcements: "Announcements",
+        contact: "Contact",
+        header: "Gallery - Bhitbherwa"
+      },
+      hi: {
+        home: "मुखपृष्ठ",
+        about: "गाँव के बारे में",
+        gallery: "गैलरी",
+        announcements: "घोषणाएँ",
+        contact: "संपर्क करें",
+        header: "गैलरी - भिटभेरवा"
+      }
+    };
+
+    function switchLanguage(lang) {
+      document.querySelector('nav a[href="index.html"]').textContent = translations[lang].home;
+      document.querySelector('nav a[href="about.html"]').textContent = translations[lang].about;
+      document.querySelector('nav a[href="gallery.html"]').textContent = translations[lang].gallery;
+      document.querySelector('nav a[href="announcements.html"]').textContent = translations[lang].announcements;
+      document.querySelector('nav a[href="contact.html"]').textContent = translations[lang].contact;
+      document.getElementById("main-header").textContent = translations[lang].header;
+      localStorage.setItem("lang", lang);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("lang") || "en";
+      document.getElementById("language-select").value = saved;
+      switchLanguage(saved);
+    });
+  </script>
 </body>
 </html>

@@ -1,41 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About Bhitbherwa</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Bhitbherwa</title>
+  <meta name="description" content="Learn about Bhitbherwa's history, culture, and community."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
 </head>
 <body>
-    <header>
-        <h1>About Bhitbherwa</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="announcements.html">Announcements</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <h1 id="main-header">About Bhitbherwa</h1>
+    <nav>
+      <a href="index.html" id="nav-home">Home</a>
+      <a href="about.html" id="nav-about">About</a>
+      <a href="gallery.html" id="nav-gallery">Gallery</a>
+      <a href="announcements.html" id="nav-announcements">Announcements</a>
+      <a href="contact.html" id="nav-contact">Contact</a>
+    </nav>
+    <div style="text-align:right; padding:10px;">
+      <select id="language-select" onchange="switchLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+    </div>
+  </header>
 
-    <main>
-        <section>
-            <h2>Our Story</h2>
-            <p>Bhitbherwa is a peaceful village located in [Your District/State]. Known for its agricultural lifestyle, cultural festivals, and community spirit, Bhitbherwa is a place where traditions meet nature.</p>
-        </section>
+  <main>
+    <section>
+      <h2 id="our-story-title">Our Story</h2>
+      <p id="our-story-text">
+        Bhitbherwa is a peaceful village located in [Your District/State]. Known for its agricultural lifestyle, cultural festivals, and community spirit, Bhitbherwa is a place where traditions meet nature.
+      </p>
+    </section>
+    <section>
+      <h2 id="highlights-title">Village Highlights</h2>
+      <ul id="highlights-list">
+        <li>Rich cultural heritage</li>
+        <li>Traditional festivals and fairs</li>
+        <li>Agricultural roots and eco-friendly lifestyle</li>
+        <li>Warm and welcoming community</li>
+      </ul>
+    </section>
+  </main>
 
-        <section>
-            <h2>Village Highlights</h2>
-            <ul>
-                <li>Rich cultural heritage</li>
-                <li>Traditional festivals and fairs</li>
-                <li>Agricultural roots and eco-friendly lifestyle</li>
-                <li>Warm and welcoming community</li>
-            </ul>
-        </section>
-    </main>
+  <footer>
+    <p>&copy; 2025 Bhitbherwa Village. All rights reserved.</p>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Bhitbherwa Village. All rights reserved.</p>
-    </footer>
+  <script>
+    const translations = {
+      en: {
+        home: "Home",
+        about: "About",
+        gallery: "Gallery",
+        announcements: "Announcements",
+        contact: "Contact",
+        header: "About Bhitbherwa",
+        storyTitle: "Our Story",
+        storyText: "Bhitbherwa is a peaceful village located in [Your District/State]. Known for its agricultural lifestyle, cultural festivals, and community spirit, Bhitbherwa is a place where traditions meet nature.",
+        highlightsTitle: "Village Highlights",
+        highlights: [
+          "Rich cultural heritage",
+          "Traditional festivals and fairs",
+          "Agricultural roots and eco-friendly lifestyle",
+          "Warm and welcoming community"
+        ]
+      },
+      hi: {
+        home: "मुखपृष्ठ",
+        about: "गाँव के बारे में",
+        gallery: "गैलरी",
+        announcements: "घोषणाएँ",
+        contact: "संपर्क करें",
+        header: "भिटभेरवा के बारे में",
+        storyTitle: "हमारी कहानी",
+        storyText: "भिटभेरवा एक शांत गाँव है जो [आपका जिला/राज्य] में स्थित है। यह अपने कृषि जीवनशैली, सांस्कृतिक त्योहारों और सामुदायिक भावना के लिए जाना जाता है। भिटभेरवा वह स्थान है जहाँ परंपराएँ और प्रकृति एक साथ मिलती हैं।",
+        highlightsTitle: "गाँव की विशेषताएँ",
+        highlights: [
+          "समृद्ध सांस्कृतिक विरासत",
+          "पारंपरिक मेले और त्योहार",
+          "कृषि पर आधारित और पर्यावरण-अनुकूल जीवनशैली",
+          "सहयोगी और स्वागतशील समुदाय"
+        ]
+      }
+    };
+
+    function switchLanguage(lang) {
+      const t = translations[lang];
+      document.getElementById("nav-home").textContent = t.home;
+      document.getElementById("nav-about").textContent = t.about;
+      document.getElementById("nav-gallery").textContent = t.gallery;
+      document.getElementById("nav-announcements").textContent = t.announcements;
+      document.getElementById("nav-contact").textContent = t.contact;
+      document.getElementById("main-header").textContent = t.header;
+      document.getElementById("our-story-title").textContent = t.storyTitle;
+      document.getElementById("our-story-text").textContent = t.storyText;
+      document.getElementById("highlights-title").textContent = t.highlightsTitle;
+
+      const list = document.getElementById("highlights-list");
+      list.innerHTML = "";
+      t.highlights.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+      });
+
+      localStorage.setItem("lang", lang);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("lang") || "en";
+      document.getElementById("language-select").value = saved;
+      switchLanguage(saved);
+    });
+  </script>
 </body>
 </html>
