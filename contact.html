@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - Bhitbherwa</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
   <style>
     .contact-container {
       display: flex;
@@ -54,6 +56,13 @@
       <a href="announcements.html">Announcements</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <div style="text-align: right; padding: 10px;">
+        <select id="language-select" onchange="switchLanguage(this.value)">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+      </div>
+      
   </header>
 
   <main>
@@ -74,11 +83,15 @@
 
     <h2 style="text-align:center; margin-top: 50px;">Visit Us</h2>
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14351.734491229908!2d81.017!3d26.886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399959e01bbbd6a5%3A0x6d6a7a65de!2sBhitbherwa!5e0!3m2!1sen!2sin!4v1713348412345"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+    src="https://maps.app.goo.gl/iSKMmkjHuirFGcHx8"
+    width="100%"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
   </main>
 
   <footer>
@@ -106,5 +119,36 @@
       form.reset();
     });
   </script>
+  <script>
+    const translations = {
+      en: {
+        home: "Home",
+        about: "About",
+        gallery: "Gallery",
+        announcements: "Announcements",
+        contact: "Contact",
+        header: "Welcome to Bhitbherwa Village Website",
+      },
+      hi: {
+        home: "मुखपृष्ठ",
+        about: "गाँव के बारे में",
+        gallery: "गैलरी",
+        announcements: "घोषणाएँ",
+        contact: "संपर्क करें",
+        header: "भिटभेरवा गाँव की वेबसाइट में आपका स्वागत है",
+      }
+    };
+  
+    function switchLanguage(lang) {
+      document.querySelector('nav a[href="index.html"]').textContent = translations[lang].home;
+      document.querySelector('nav a[href="about.html"]').textContent = translations[lang].about;
+      document.querySelector('nav a[href="gallery.html"]').textContent = translations[lang].gallery;
+      document.querySelector('nav a[href="announcements.html"]').textContent = translations[lang].announcements;
+      document.querySelector('nav a[href="contact.html"]').textContent = translations[lang].contact;
+      const h1 = document.querySelector("header h1");
+      if (h1) h1.textContent = translations[lang].header;
+    }
+  </script>
+  
 </body>
 </html>
