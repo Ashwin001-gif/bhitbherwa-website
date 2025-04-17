@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Bhitbherwa</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
+  <title>Contact Bhitbherwa</title>
+  <meta name="description" content="Get in touch with Bhitbherwa Village Committee."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
   <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background: #003366;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .contact-container {
       display: flex;
       flex-direction: column;
       gap: 20px;
       max-width: 600px;
-      margin: 0 auto;
-      background: white;
+      margin: 30px auto;
+      background: #fff;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -29,26 +50,49 @@
       font-size: 16px;
     }
 
-    label {
-      font-weight: bold;
+    button {
+      padding: 12px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
     }
 
-    iframe {
-      border: 0;
+    button:hover {
+      background-color: #0055aa;
+    }
+
+    iframe.map {
       width: 100%;
-      height: 300px;
+      height: 400px;
+      border: 0;
       border-radius: 10px;
+      margin-top: 30px;
     }
 
     .success {
       color: green;
-      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .language-select {
+      text-align: right;
+      padding: 10px;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 5px 0;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Contact Bhitbherwa</h1>
+    <h1 id="main-header">Contact Bhitbherwa</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -56,18 +100,17 @@
       <a href="announcements.html">Announcements</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div style="text-align: right; padding: 10px;">
-        <select id="language-select" onchange="switchLanguage(this.value)">
-          <option value="en">English</option>
-          <option value="hi">हिन्दी</option>
-        </select>
-      </div>
-      
+    <div class="language-select">
+      <select id="language-select" onchange="switchLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+    </div>
   </header>
 
   <main>
     <h2 style="text-align:center;">Send Us a Message</h2>
-    <form class="contact-container" id="contactForm">
+    <form id="contactForm" class="contact-container">
       <label for="name">Your Name:</label>
       <input type="text" id="name" name="name" required />
 
@@ -81,45 +124,39 @@
       <div id="formMsg" class="success"></div>
     </form>
 
-    <h2 style="text-align:center; margin-top: 50px;">Visit Us</h2>
-    <iframe
-    src="https://maps.app.goo.gl/rba2JiHu1xfcxfm28"
-    width="100%"
-    height="450"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-
+    <h2 style="text-align:center; margin-top:50px;">Visit Us</h2>
+    <iframe 
+      class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.039917493018!2d84.43284687571418!3d26.486659576903666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3993054da02d7cfd%3A0x1ccc3bdc6838d2d0!2sShiv%20Temple!5e0!3m2!1sen!2sin!4v1744898956851!5m2!1sen!2sin"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </main>
 
   <footer>
-    <p>&copy; 2025 Bhitbherwa Village Website. All rights reserved.</p>
+    <p>&copy; 2025 Bhitbherwa Village. All rights reserved.</p>
   </footer>
 
   <script>
-    const form = document.getElementById("contactForm");
-    const msg = document.getElementById("formMsg");
-
-    form.addEventListener("submit", function (e) {
+    // Contact Form Submission
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
       e.preventDefault();
-
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+      const feedback = document.getElementById("formMsg");
 
       if (!name || !email || !message) {
-        msg.textContent = "Please fill in all fields.";
+        feedback.textContent = "Please fill in all fields.";
         return;
       }
 
-      // Simulate success
-      msg.textContent = "✅ Message sent successfully!";
-      form.reset();
+      feedback.textContent = "✅ Message sent successfully!";
+      this.reset();
     });
-  </script>
-  <script>
+
+    // Language Switcher
     const translations = {
       en: {
         home: "Home",
@@ -127,7 +164,7 @@
         gallery: "Gallery",
         announcements: "Announcements",
         contact: "Contact",
-        header: "Welcome to Bhitbherwa Village Website",
+        header: "Contact Bhitbherwa"
       },
       hi: {
         home: "मुखपृष्ठ",
@@ -135,20 +172,25 @@
         gallery: "गैलरी",
         announcements: "घोषणाएँ",
         contact: "संपर्क करें",
-        header: "भिटभेरवा गाँव की वेबसाइट में आपका स्वागत है",
+        header: "भिटभेरवा से संपर्क करें"
       }
     };
-  
+
     function switchLanguage(lang) {
       document.querySelector('nav a[href="index.html"]').textContent = translations[lang].home;
       document.querySelector('nav a[href="about.html"]').textContent = translations[lang].about;
       document.querySelector('nav a[href="gallery.html"]').textContent = translations[lang].gallery;
       document.querySelector('nav a[href="announcements.html"]').textContent = translations[lang].announcements;
       document.querySelector('nav a[href="contact.html"]').textContent = translations[lang].contact;
-      const h1 = document.querySelector("header h1");
-      if (h1) h1.textContent = translations[lang].header;
+      document.getElementById("main-header").textContent = translations[lang].header;
+      localStorage.setItem("lang", lang);
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("lang") || "en";
+      document.getElementById("language-select").value = saved;
+      switchLanguage(saved);
+    });
   </script>
-  
 </body>
 </html>
