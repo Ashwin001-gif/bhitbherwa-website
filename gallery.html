@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Gallery - Bhitbherwa</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Bhitbherwa</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
+  <style>
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery-container img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Bhitbherwa Photo Gallery</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="announcements.html">Announcements</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <h1>Bhitbherwa Gallery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>Village Moments</h2>
-            <p>Here are some beautiful moments from Bhitbherwa:</p>
-            <div class="gallery">
-                <img src="village1.jpg" alt="Village Scene 1" width="300">
-                <img src="village2.jpg" alt="Village Scene 2" width="300">
-                <img src="village3.jpg" alt="Festival" width="300">
-            </div>
-        </section>
-    </main>
+  <main>
+    <h2 style="text-align:center;">Our Village in Pictures</h2>
+    <div class="gallery-container">
+      <a href="images/village1.jpg" data-lightbox="village" data-title="Village View 1"><img src="images/village1.jpg" alt="Village View 1" /></a>
+      <a href="images/village2.jpg" data-lightbox="village" data-title="Village View 2"><img src="images/village2.jpg" alt="Village View 2" /></a>
+      <a href="images/festival.jpg" data-lightbox="village" data-title="Festival Celebration"><img src="images/festival.jpg" alt="Festival" /></a>
+      <a href="images/school.jpg" data-lightbox="village" data-title="Village School"><img src="images/school.jpg" alt="School" /></a>
+      <!-- Add more images as needed -->
+    </div>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Bhitbherwa Village. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Bhitbherwa Village Website. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
 </body>
 </html>

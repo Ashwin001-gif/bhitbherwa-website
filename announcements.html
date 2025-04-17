@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Announcements - Bhitbherwa</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Announcements - Bhitbherwa</title>
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+
+  <style>
+    .announcement-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Village Announcements</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="announcements.html">Announcements</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <h1>Village Announcements</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>Latest News</h2>
-            <ul>
-                <li>🗳️ Panchayat election results will be announced on April 18th.</li>
-                <li>🚧 Road repair work will begin next week near the school.</li>
-                <li>🌳 Tree plantation drive on April 21st – all are welcome!</li>
-            </ul>
-        </section>
-    </main>
+  <main class="announcement-container">
+    <h2 style="text-align:center;">Latest Updates</h2>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1hAIs7u3tNfXzO0gnxE_JFa6AxHcOe8jhsLU5-52brRGapd7rS-Mi9zTTI7jFmd-xDiZFRiTkrNJl/pubhtml" width="100%" height="600px" style="border: none; border-radius: 10px;"></iframe>
 
-    <footer>
-        <p>&copy; 2025 Bhitbherwa Village. All rights reserved.</p>
-    </footer>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bhitbherwa Village Website. All rights reserved.</p>
+  </footer>
 </body>
 </html>
