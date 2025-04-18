@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to Bhitbherwa</title>
+  <title data-translate="title">Welcome to Bhitbherwa</title>
   <meta name="description" content="Discover Bhitbherwa Village – culture, events, gallery, and contact information."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -13,13 +13,13 @@
 </head>
 <body>
   <header>
-    <h1 id="main-header">Welcome to Bhitbherwa Village Website</h1>
+    <h1 id="main-header" data-translate="header">WELCOME TO BHITBHERWA VILLAGE WEBSITE</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="announcements.html">Announcements</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-translate="home">Home</a>
+      <a href="about.html" data-translate="about">About</a>
+      <a href="gallery.html" data-translate="gallery">Gallery</a>
+      <a href="announcements.html" data-translate="announcements">Announcements</a>
+      <a href="contact.html" data-translate="contact">Contact</a>
     </nav>
     <div style="text-align:right; padding:10px;">
       <select id="language-select" onchange="switchLanguage(this.value)">
@@ -30,38 +30,79 @@
   </header>
 
   <main>
+    <!-- Intro -->
     <section class="intro">
-      <h2>Discover Bhitbherwa</h2>
+      <h2 data-translate="discover-title">DISCOVER BHITBHERWA</h2>
+      <h3 data-translate="overview-title">Village Overview</h3>
+      <p data-translate="location-text">
+        Location: Bhitbherwa is situated in the Gopalganj subdivision of Gopalganj district, Bihar, approximately 4 km from the district and sub-district headquarters.
+      </p>
+      <p data-translate="panchayat-text"><strong>Gram Panchayat:</strong> Bhitbherwa</p>
+      <p data-translate="postal-text"><strong>Postal Code:</strong> 841428</p>
+      <p data-translate="welcome-text">
+        Welcome to Bhitbherwa, a village full of vibrant culture, heritage, and warm, welcoming people. Explore our community, stay informed, and engage with local events happening throughout the year.
+      </p>
       <img src="images/village1.jpg" alt="Beautiful village view" class="intro-img"/>
-      <p>Welcome to Bhitbherwa, a village full of vibrant culture, heritage, and warm, welcoming people. Explore our community, stay informed, and engage with local events happening throughout the year.</p>
-      <button onclick="location.href='about.html'">Learn More</button>
+      <button onclick="location.href='about.html'" data-translate="learn-more">Learn More</button>
     </section>
 
+    <!-- Announcements -->
     <section class="announcements">
-      <h2>Latest Announcements</h2>
+      <h2 data-translate="announcements-title">Latest Announcements</h2>
       <div class="card-container">
         <div class="card">
           <h3>🌾 Village Fair on April 20th</h3>
           <p>Join us for a day of local crafts, food, and festivities. The whole village is invited!</p>
-          <button onclick="location.href='announcements.html'">Read More</button>
+          <button onclick="location.href='announcements.html'" data-translate="read-more">Read More</button>
         </div>
         <div class="card">
           <h3>💧 Water Supply Project Started</h3>
           <p>We are working on improving the village's water supply system to ensure clean water for all.</p>
-          <button onclick="location.href='announcements.html'">Details</button>
+          <button onclick="location.href='announcements.html'" data-translate="details">Details</button>
         </div>
         <div class="card">
           <h3>📢 Panchayat Meeting on April 25th</h3>
           <p>All villagers are invited to attend the upcoming Panchayat meeting to discuss important community matters.</p>
-          <button onclick="location.href='announcements.html'">Learn More</button>
+          <button onclick="location.href='announcements.html'" data-translate="learn-more">Learn More</button>
         </div>
       </div>
     </section>
 
+    <!-- Explore -->
     <section class="explore">
-      <h2>Explore Bhitbherwa</h2>
-      <p>From scenic views to the history of our village, there’s always something to discover. Check out our gallery or get in touch with the community.</p>
-      <button onclick="location.href='gallery.html'">Visit Gallery</button>
+      <h2 data-translate="explore-title">Explore Bhitbherwa</h2>
+      <p data-translate="explore-text">
+        From scenic views to the history of our village, there’s always something to discover. Check out our gallery or get in touch with the community.
+      </p>
+      <button onclick="location.href='gallery.html'" data-translate="visit-gallery">Visit Gallery</button>
+    </section>
+
+    <!-- Village Highlights -->
+    <section class="highlights">
+      <h2 data-translate="highlights-title">Village Highlights</h2>
+      <div class="highlight-container">
+        <div class="highlight">
+          <img src="images/school.jpg" alt="Village School" />
+          <h3 data-translate="highlight-education">Education</h3>
+          <p data-translate="highlight-education-text">
+            Bhitbherwa has schools that promote quality education for village children.
+          </p>
+        </div>
+        <div class="highlight">
+          <img src="images/agriculture.jpg" alt="Farming" />
+          <h3 data-translate="highlight-agriculture">Agriculture</h3>
+          <p data-translate="highlight-agriculture-text">
+            Farming is the main livelihood, with fertile land supporting various crops.
+          </p>
+        </div>
+        <div class="highlight">
+          <img src="images/temple.jpg" alt="Village Temple" />
+          <h3 data-translate="highlight-culture">Culture & Heritage</h3>
+          <p data-translate="highlight-culture-text">
+            Traditional festivals and temples reflect the vibrant culture of Bhitbherwa.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -72,24 +113,71 @@
   <script>
     const translations = {
       en: {
+        title: "Welcome to Bhitbherwa",
         home: "Home", about: "About", gallery: "Gallery",
         announcements: "Announcements", contact: "Contact",
-        header: "Welcome to Bhitbherwa Village Website"
+        header: "Welcome to Bhitbherwa Village Website",
+        "discover-title": "Discover Bhitbherwa",
+        "overview-title": "Village Overview",
+        "location-text": "Location: Bhitbherwa is situated in the Gopalganj subdivision of Gopalganj district, Bihar, approximately 4 km from the district and sub-district headquarters.",
+        "panchayat-text": "Gram Panchayat: Bhitbherwa",
+        "postal-text": "Postal Code: 841428",
+        "welcome-text": "Welcome to Bhitbherwa, a village full of vibrant culture, heritage, and warm, welcoming people. Explore our community, stay informed, and engage with local events happening throughout the year.",
+        "learn-more": "Learn More",
+        "announcements-title": "Latest Announcements",
+        "read-more": "Read More",
+        "details": "Details",
+        "explore-title": "Explore Bhitbherwa",
+        "explore-text": "From scenic views to the history of our village, there’s always something to discover. Check out our gallery or get in touch with the community.",
+        "visit-gallery": "Visit Gallery",
+        "highlights-title": "Village Highlights",
+        "highlight-education": "Education",
+        "highlight-education-text": "Bhitbherwa has schools that promote quality education for village children.",
+        "highlight-agriculture": "Agriculture",
+        "highlight-agriculture-text": "Farming is the main livelihood, with fertile land supporting various crops.",
+        "highlight-culture": "Culture & Heritage",
+        "highlight-culture-text": "Traditional festivals and temples reflect the vibrant culture of Bhitbherwa."
       },
       hi: {
+        title: "भिटभेरवा में आपका स्वागत है",
         home: "मुखपृष्ठ", about: "गाँव के बारे में", gallery: "गैलरी",
         announcements: "घोषणाएँ", contact: "संपर्क करें",
-        header: "भिटभेरवा गाँव की वेबसाइट में आपका स्वागत है"
+        header: "भिटभेरवा गाँव की वेबसाइट में आपका स्वागत है",
+        "discover-title": "भिटभेरवा की खोज करें",
+        "overview-title": "गाँव का अवलोकन",
+        "location-text": "स्थान: भिटभेरवा, गोपालगंज उप-विभाग, गोपालगंज जिला, बिहार में स्थित है, जो जिला मुख्यालय से लगभग 4 किमी दूर है।",
+        "panchayat-text": "ग्राम पंचायत: भिटभेरवा",
+        "postal-text": "डाक कोड: 841428",
+        "welcome-text": "भिटभेरवा में आपका स्वागत है, यह एक जीवंत संस्कृति, विरासत और मेहमाननवाज़ लोगों वाला गाँव है। हमारी समुदाय की खोज करें, नवीनतम सूचनाएँ प्राप्त करें, और साल भर स्थानीय आयोजनों में भाग लें।",
+        "learn-more": "और जानें",
+        "announcements-title": "ताज़ा घोषणाएँ",
+        "read-more": "और पढ़ें",
+        "details": "विवरण",
+        "explore-title": "भिटभेरवा का अन्वेषण करें",
+        "explore-text": "आकर्षक दृश्य से लेकर गाँव के इतिहास तक, हमेशा कुछ नया खोजने को है। हमारी गैलरी देखें या समुदाय से जुड़ें।",
+        "visit-gallery": "गैलरी देखें",
+        "highlights-title": "गाँव की झलकियाँ",
+        "highlight-education": "शिक्षा",
+        "highlight-education-text": "भिटभेरवा में ऐसे स्कूल हैं जो बच्चों को गुणवत्तापूर्ण शिक्षा प्रदान करते हैं।",
+        "highlight-agriculture": "कृषि",
+        "highlight-agriculture-text": "खेती यहाँ का मुख्य व्यवसाय है, उपजाऊ भूमि विभिन्न फसलों का समर्थन करती है।",
+        "highlight-culture": "संस्कृति और विरासत",
+        "highlight-culture-text": "पारंपरिक त्योहार और मंदिर भिटभेरवा की जीवंत संस्कृति को दर्शाते हैं।"
       }
     };
 
     function switchLanguage(lang) {
-      document.querySelector('nav a[href="index.html"]').textContent = translations[lang].home;
-      document.querySelector('nav a[href="about.html"]').textContent = translations[lang].about;
-      document.querySelector('nav a[href="gallery.html"]').textContent = translations[lang].gallery;
-      document.querySelector('nav a[href="announcements.html"]').textContent = translations[lang].announcements;
-      document.querySelector('nav a[href="contact.html"]').textContent = translations[lang].contact;
-      document.getElementById("main-header").textContent = translations[lang].header;
+      // update <title>
+      document.querySelector("title").textContent = translations[lang].title;
+
+      // update nav & header
+      document.querySelectorAll("[data-translate]").forEach(el => {
+        const key = el.getAttribute("data-translate");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
       localStorage.setItem("lang", lang);
     }
 

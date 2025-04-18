@@ -30,21 +30,61 @@
   </header>
 
   <main>
-    <section>
-      <h2 id="our-story-title">Our Story</h2>
-      <p id="our-story-text">
-        Bhitbherwa is a peaceful village located in [Your District/State]. Known for its agricultural lifestyle, cultural festivals, and community spirit, Bhitbherwa is a place where traditions meet nature.
+    <section class="village-story">
+      <h2 id="story-title">The Story of Bhitbherwa</h2>
+      <p id="story-paragraph-1">
+        Bhitbherwa, a charming village nestled in the heart of Gopalganj, Bihar, has a rich and vibrant history. 
+        For centuries, our village has been the heart of agricultural life and cultural traditions. Our ancestors, 
+        who first settled here, were drawn by the fertile lands and the serene surroundings. Over time, the village 
+        grew into a close-knit community known for its warmth, hospitality, and resilience.
+      </p>
+      <p id="story-paragraph-2">
+        In the early days, Bhitbherwa was primarily a farming community, with agriculture being the backbone of its economy. 
+        The villagers cultivated crops like rice, wheat, and pulses, and raised livestock. The village has always been self-sustaining, 
+        with everyone contributing to its growth.
+      </p>
+      <p id="story-paragraph-3">
+        With time, Bhitbherwa began to embrace modernization. Infrastructure improvements, such as better roads, a school, and access 
+        to healthcare, began to shape the future of the village. However, the essence of our culture, from traditional festivals to 
+        the respect for elders, has remained steadfast.
+      </p>
+      <p id="story-paragraph-4">
+        Today, Bhitbherwa continues to thrive as a symbol of unity, tradition, and progress. The village is growing, yet it never 
+        forgets its roots. Bhitbherwa is a place where the past and the future blend harmoniously, where our community values 
+        education, sustainability, and the well-being of its people.
+      </p>
+      <p id="story-paragraph-5">
+        As we move forward, Bhitbherwa stands strong with the promise of a better tomorrow, while honoring the wisdom of the past. 
+        We invite you to explore our rich heritage, be a part of our journey, and witness the growth of Bhitbherwa.
       </p>
     </section>
-    <section>
-      <h2 id="highlights-title">Village Highlights</h2>
-      <ul id="highlights-list">
-        <li>Rich cultural heritage</li>
-        <li>Traditional festivals and fairs</li>
-        <li>Agricultural roots and eco-friendly lifestyle</li>
-        <li>Warm and welcoming community</li>
-      </ul>
+    
+    <section class="highlights">
+      <h2>Village Highlights</h2>
+      <div class="highlight-container">
+        <div class="highlight">
+          <img src="images/school.jpg" alt="Village School" />
+          <h3>Education</h3>
+          <p>Home to a government middle school and access to nearby higher secondary schools in Gopalganj.</p>
+        </div>
+        <div class="highlight">
+          <img src="images/temple.jpg" alt="Temple" />
+          <h3>Culture</h3>
+          <p>Rich traditions with festivals like Chhath Puja and Holi celebrated with great devotion.</p>
+        </div>
+        <div class="highlight">
+          <img src="images/farm.jpg" alt="Farming Land" />
+          <h3>Agriculture</h3>
+          <p>Fertile lands support paddy, wheat, and seasonal vegetable farming, sustaining the local economy.</p>
+        </div>
+        <div class="highlight">
+          <img src="images/water.jpg" alt="Water Supply Project" />
+          <h3>Development</h3>
+          <p>Ongoing infrastructure upgrades like water pipelines, better roads, and LED street lighting.</p>
+        </div>
+      </div>
     </section>
+    
   </main>
 
   <footer>
@@ -54,60 +94,45 @@
   <script>
     const translations = {
       en: {
-        home: "Home",
-        about: "About",
-        gallery: "Gallery",
-        announcements: "Announcements",
-        contact: "Contact",
-        header: "About Bhitbherwa",
-        storyTitle: "Our Story",
-        storyText: "Bhitbherwa is a peaceful village located in [Your District/State]. Known for its agricultural lifestyle, cultural festivals, and community spirit, Bhitbherwa is a place where traditions meet nature.",
-        highlightsTitle: "Village Highlights",
-        highlights: [
-          "Rich cultural heritage",
-          "Traditional festivals and fairs",
-          "Agricultural roots and eco-friendly lifestyle",
-          "Warm and welcoming community"
-        ]
+        home: "Home", about: "About", gallery: "Gallery",
+        announcements: "Announcements", contact: "Contact",
+        header: "Welcome to Bhitbherwa Village Website",
+        storyTitle: "The Story of Bhitbherwa",
+        storyParagraph1: "Bhitbherwa, a charming village nestled in the heart of Gopalganj, Bihar, has a rich and vibrant history. For centuries, our village has been the heart of agricultural life and cultural traditions. Our ancestors, who first settled here, were drawn by the fertile lands and the serene surroundings. Over time, the village grew into a close-knit community known for its warmth, hospitality, and resilience.",
+        storyParagraph2: "In the early days, Bhitbherwa was primarily a farming community, with agriculture being the backbone of its economy. The villagers cultivated crops like rice, wheat, and pulses, and raised livestock. The village has always been self-sustaining, with everyone contributing to its growth.",
+        storyParagraph3: "With time, Bhitbherwa began to embrace modernization. Infrastructure improvements, such as better roads, a school, and access to healthcare, began to shape the future of the village. However, the essence of our culture, from traditional festivals to the respect for elders, has remained steadfast.",
+        storyParagraph4: "Today, Bhitbherwa continues to thrive as a symbol of unity, tradition, and progress. The village is growing, yet it never forgets its roots. Bhitbherwa is a place where the past and the future blend harmoniously, where our community values education, sustainability, and the well-being of its people.",
+        storyParagraph5: "As we move forward, Bhitbherwa stands strong with the promise of a better tomorrow, while honoring the wisdom of the past. We invite you to explore our rich heritage, be a part of our journey, and witness the growth of Bhitbherwa."
       },
       hi: {
-        home: "मुखपृष्ठ",
-        about: "गाँव के बारे में",
-        gallery: "गैलरी",
-        announcements: "घोषणाएँ",
-        contact: "संपर्क करें",
-        header: "भिटभेरवा के बारे में",
-        storyTitle: "हमारी कहानी",
-        storyText: "भिटभेरवा एक शांत गाँव है जो [आपका जिला/राज्य] में स्थित है। यह अपने कृषि जीवनशैली, सांस्कृतिक त्योहारों और सामुदायिक भावना के लिए जाना जाता है। भिटभेरवा वह स्थान है जहाँ परंपराएँ और प्रकृति एक साथ मिलती हैं।",
-        highlightsTitle: "गाँव की विशेषताएँ",
-        highlights: [
-          "समृद्ध सांस्कृतिक विरासत",
-          "पारंपरिक मेले और त्योहार",
-          "कृषि पर आधारित और पर्यावरण-अनुकूल जीवनशैली",
-          "सहयोगी और स्वागतशील समुदाय"
-        ]
+        home: "मुखपृष्ठ", about: "गाँव के बारे में", gallery: "गैलरी",
+        announcements: "घोषणाएँ", contact: "संपर्क करें",
+        header: "भिटभेरवा गाँव की वेबसाइट में आपका स्वागत है",
+        storyTitle: "भिटभेरवा की कहानी",
+        storyParagraph1: "भिटभेरवा, जो गोपालगंज, बिहार के दिल में स्थित है, एक समृद्ध और जीवंत इतिहास वाला गाँव है। सदियों से, हमारा गाँव कृषि जीवन और सांस्कृतिक परंपराओं का केंद्र रहा है। हमारे पूर्वज, जिन्होंने यहां पहले बसने का निर्णय लिया, उपजाऊ ज़मीन और शांत वातावरण से आकर्षित हुए थे। समय के साथ, यह गाँव एक ऐसी समुदाय में विकसित हुआ जो अपनी गर्मजोशी, आतिथ्य और लचीलापन के लिए जाना जाता है।",
+        storyParagraph2: "प्रारंभिक दिनों में, भिटभेरवा मुख्य रूप से एक कृषि समुदाय था, जिसमें कृषि इसके अर्थव्यवस्था का आधार था। गाँववाले चावल, गेहूं और दाल जैसी फसलों की खेती करते थे और पशुपालन करते थे। यह गाँव हमेशा आत्मनिर्भर रहा है, जिसमें हर कोई इसके विकास में योगदान करता है।",
+        storyParagraph3: "समय के साथ, भिटभेरवा ने आधुनिकीकरण को अपनाना शुरू किया। बेहतर सड़कों, स्कूलों और स्वास्थ्य सेवाओं तक पहुंच जैसे बुनियादी ढांचा सुधारों ने गाँव के भविष्य को आकार देना शुरू किया। हालांकि, हमारी संस्कृति का सार, पारंपरिक त्योहारों से लेकर बुजुर्गों का सम्मान करने तक, स्थिर रहा है।",
+        storyParagraph4: "आज, भिटभेरवा एकता, परंपरा और प्रगति का प्रतीक के रूप में फल-फूल रहा है। यह गाँव बढ़ रहा है, लेकिन यह कभी भी अपनी जड़ों को नहीं भूलता। भिटभेरवा एक ऐसा स्थान है जहां अतीत और भविष्य एक साथ समन्वित होते हैं, जहाँ हमारी समुदाय शिक्षा, स्थिरता और लोगों की भलाई को महत्व देती है।",
+        storyParagraph5: "जैसे ही हम आगे बढ़ते हैं, भिटभेरवा बेहतर कल का वादा करता है, जबकि अतीत की बुद्धिमत्ता का सम्मान करता है। हम आपको हमारे समृद्ध धरोहर का अन्वेषण करने, हमारे सफर का हिस्सा बनने और भिटभेरवा के विकास को देखने के लिए आमंत्रित करते हैं।"
       }
     };
 
     function switchLanguage(lang) {
       const t = translations[lang];
+
+      document.getElementById("story-title").textContent = t.storyTitle;
+      document.getElementById("story-paragraph-1").textContent = t.storyParagraph1;
+      document.getElementById("story-paragraph-2").textContent = t.storyParagraph2;
+      document.getElementById("story-paragraph-3").textContent = t.storyParagraph3;
+      document.getElementById("story-paragraph-4").textContent = t.storyParagraph4;
+      document.getElementById("story-paragraph-5").textContent = t.storyParagraph5;
+
       document.getElementById("nav-home").textContent = t.home;
       document.getElementById("nav-about").textContent = t.about;
       document.getElementById("nav-gallery").textContent = t.gallery;
       document.getElementById("nav-announcements").textContent = t.announcements;
       document.getElementById("nav-contact").textContent = t.contact;
       document.getElementById("main-header").textContent = t.header;
-      document.getElementById("our-story-title").textContent = t.storyTitle;
-      document.getElementById("our-story-text").textContent = t.storyText;
-      document.getElementById("highlights-title").textContent = t.highlightsTitle;
-
-      const list = document.getElementById("highlights-list");
-      list.innerHTML = "";
-      t.highlights.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = item;
-        list.appendChild(li);
-      });
 
       localStorage.setItem("lang", lang);
     }
@@ -120,3 +145,4 @@
   </script>
 </body>
 </html>
+
